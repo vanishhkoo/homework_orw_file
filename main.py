@@ -16,16 +16,18 @@ with open('recipes.txt', 'rt') as recipes_file:
         cook_book[recipes_name] = recipes_list
 # print(cook_book)
 
+ingredient_all_person = {}
 def get_shop_list_by_dishes(dishes, person):
     for dish in dishes:
-        for x in cook_book:
-            if x == dish:
-                dish_all_persons = quantity * person
-                print(dish)
-            # else:
-                # print('There is no such dish')
+        if dish in cook_book:
+            for ingredients in cook_book[dish]:
+                if ingredients['ingredient_name'] in result:
+                    ingredient_all_person[ingredients['ingredient_name']]['quantity'] += int(ingredients['quantity']) * person
+                else:
+                    ingredient_all_person[ingredients['ingredient_name']] = {'measure': ingredients['measure'], 'quantity': int(ingredients['quantity']) * person}
 
 get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
+print(ingredient_all_person)
 
 
 
