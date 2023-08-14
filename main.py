@@ -21,7 +21,7 @@ def get_shop_list_by_dishes(dishes, person):
     for dish in dishes:
         if dish in cook_book:
             for ingredients in cook_book[dish]:
-                if ingredients['ingredient_name'] in result:
+                if ingredients['ingredient_name'] in ingredient_all_person:
                     ingredient_all_person[ingredients['ingredient_name']]['quantity'] += int(ingredients['quantity']) * person
                 else:
                     ingredient_all_person[ingredients['ingredient_name']] = {'measure': ingredients['measure'], 'quantity': int(ingredients['quantity']) * person}
