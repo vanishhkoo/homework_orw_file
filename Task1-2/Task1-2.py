@@ -1,8 +1,3 @@
-# recipes_open = open('recipes.txt')
-# print(recipes_open.read())
-
-
-
 with open('recipes.txt', 'rt') as recipes_file:
     cook_book = {}
     for recipes in recipes_file:
